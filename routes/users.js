@@ -1,6 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
+const multer = require('multer');
 const { genRandPass } = require('../utils');
 const bcrypt = require('bcryptjs');
 const Otp = require('../models/Otp');
@@ -18,6 +19,7 @@ let transporter = nodemailer.createTransport({
     pass: 'nitinyadav',
   },
 });
+
 
 router.get('/', async (req, res) => {
   try {

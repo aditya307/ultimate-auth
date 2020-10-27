@@ -6,10 +6,11 @@ passport.use(
     {
       clientID: '1091310501285646',
       clientSecret: 'd3cbf8df4685f0af236dcef9a408fe73',
-      callbackURL: 'login/facebook/callback',
+      callbackURL: '/login/facebook/callback',
     },
     function (accessToken, refreshToken, profile, cb) {
       console.log(profile);
+      // console.log(accessToken);
     }
   )
 );

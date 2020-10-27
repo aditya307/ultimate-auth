@@ -12,6 +12,7 @@ const posts = require('./routes/posts');
 const auth = require('./routes/auth');
 
 require('./gitpassport');
+require('./fbpassport');
 
 connectDB();
 const app = express();
@@ -25,8 +26,12 @@ app.use(passport.session());
 app.use('/api/users', users);
 app.use('/api/auth', auth);
 app.use('/api/posts', posts);
+app.use('/login', fbauth);
 app.use('/login', gitauth);
 
+app.use('/', (req, res) => {
+  res.send('hey guyzz');
+});
 
 const PORT = process.env.PORT || 5000;
 

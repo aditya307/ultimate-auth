@@ -9,6 +9,9 @@ const PostSchema = new Schema({
   caption: {
     type: String,
   },
+  image: {
+    type: Buffer,
+  },
   Uploaded_At: {
     type: Date,
     default: Date.now(),
